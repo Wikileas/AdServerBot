@@ -1,5 +1,3 @@
-#DO NOT CREATE THE JSON BEFOREHAND, JUST RUN THIS FILE ALONE AND IT SHOULD WORK.
-
 import discord
 import os
 import json
@@ -35,8 +33,11 @@ async def build(ctx, channel_id: int, cooldown: int, message: str):
     try:
         with open('messages.json', 'r') as f:
             data = json.load(f)
-    except FileNotFoundError: #IF YOU GET JSON DECODER ERROR JUST DELETE YOUR JSON
+    except FileNotFoundError:
         data = {}
+    except json.decoder.JSONDecodeError:
+      os.remove("messages.json")
+      data = {}
 
     data["message"] = message
     if "servers" not in data:
@@ -55,4 +56,4 @@ async def stop(ctx):
     global running
     running = False
     await ctx.send("Stopping!")
-client.run('MTA3MzM1NDg0MjI3MTEzNzg3Mw.GfsJT3.qguxHyt_oP-ajMnWPjAHDQ-_vENOH37pdKIqiM')
+client.run('TOKEN HERE')
