@@ -6,6 +6,7 @@ A bot made to advertise in some servers, it will send the message you want, in m
 # Setup
 
 ```
+git clone https://github.com/Wikileas/AdServerBot/
 pip install -r requirements.txt
 cd AdServer
 python3 AdServer.py
