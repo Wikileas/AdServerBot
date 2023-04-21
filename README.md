@@ -14,7 +14,6 @@ python3 AdServer.py
 
 To stop the bot, you can either do a `KeyboardInterrupt` action (e.g CTRL+C) or write `:stop` in any server or channel.
 
-Or, just fork our Repl: https://replit.com/@Outhack/selftest#main.py
 
 # Commands
 
